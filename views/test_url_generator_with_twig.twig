@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL and Path Generator Examples</title>
+</head>
+<body>
+{# See https://twigfiddle.com/pr3mk1 for twig examples #}
+
+{# We will use the generated URL and path more than once, so set them to a variable. #}
+{# Note that {'fname': fname, 'lname': lname} is a twig associative array with keys 'fname' and 'line' and values that are the twig variables fname and lname. #}
+{# The url and path functions are provided by the symfony/twig-bridge package. #}
+{%  set url = url('hello_route', {'fname': fname, 'lname': lname}) %}
+{%  set path = path('hello_route', {'fname': fname, 'lname': lname}) %}
+A generated URL for the hello_route with parameter name=Jason: <a href="{{ url }}">{{ url }}</a><br />
+A generated path for the hello_route with parameter name=Jason: <a href=" {{ path }}">{{ path }}</a>
+</body>
+</html>
